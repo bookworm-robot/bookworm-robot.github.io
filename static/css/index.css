@@ -37,6 +37,11 @@ body {
   padding-bottom: 3rem;
 }
 
+/* Title hero: tighten the gap below the title/authors/links block. */
+.hero .hero-body {
+  padding-bottom: 1rem;
+}
+
 .teaser {
   font-family: 'Google Sans', sans-serif;
 }
