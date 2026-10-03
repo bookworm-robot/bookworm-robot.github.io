@@ -139,6 +139,14 @@ body {
   vertical-align: middle;
 }
 
+/* Single-appliance icon row: 5x the ~0.25em single-space gap of inline layout. */
+.appliance-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25em;
+}
+
 /* Small device icon sized to sit inline within a line of text. */
 .inline-device-icon {
   height: 1.6em;
@@ -152,32 +160,17 @@ body {
   .appliance-thumb { width: 20%; }
 }
 
-/* Show a slice of the combined results figure.
-   --split   = fraction of the image WIDTH shown by the left (single-appliance) plot.
-   --droptop = fraction of the image HEIGHT to drop off the top (bottom is kept).
-   Image intrinsic ratio is 635.884687 / 110.945078. */
+/* Results figures: the single-device and transfer halves of the combined plot. */
 .results-plot {
-  --split: 0.45;
-  --droptop: 0.166;
-  --ratio: calc(635.884687 / 110.945078);
+  display: block;
   width: 100%;
-  background-image: url("../images/single_task_and_transfer_results.svg");
-  background-repeat: no-repeat;
-}
-.results-plot--left {
-  aspect-ratio: calc(var(--split) * var(--ratio) / (1 - var(--droptop)));
-  background-size: calc(100% / var(--split)) calc(100% / (1 - var(--droptop)));
-  background-position: left bottom;
-}
-.results-plot--right {
-  aspect-ratio: calc((1 - var(--split)) * var(--ratio) / (1 - var(--droptop)));
-  background-size: calc(100% / (1 - var(--split))) calc(100% / (1 - var(--droptop)));
-  background-position: right bottom;
+  height: auto;
+  margin: 0 auto;
 }
 
-/* Left results plot: 70% width on desktop, full width on mobile */
+/* The single-device half is narrower and taller, so rein it in on desktop. */
 @media screen and (min-width: 769px) {
-  .results-plot--left { width: 70%; margin: 0 auto; }
+  .results-plot--left { width: 70%; }
 }
 
 /* Ablation cards: thin outline instead of drop shadow */

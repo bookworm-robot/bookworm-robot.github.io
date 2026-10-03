@@ -143,35 +143,36 @@
           <br>
 
           <h3 class="title is-4">Single-Appliance</h3>
-          <p>
+          <p class="appliance-row">
             <img src="static/images/appliances/honeywell_thermostat.jpg" alt="Honeywell thermostat" class="appliance-thumb">
             <img src="static/images/appliances/mr_coffee_lr_cropped.jpg" alt="Mr. Coffee maker" class="appliance-thumb">
+            <img src="static/images/appliances/amazon_basics_waffle_cropped.jpg" alt="Amazon Basics waffle maker" class="appliance-thumb">
           </p>
-          <div class="results-plot results-plot--left" role="img" aria-label="Single-task experiment results"></div>
+          <img src="static/images/single_device_results.svg" alt="Single-device experiment results" class="results-plot results-plot--left">
           <div class="content has-text-justified is-size-5">
-            <p>In the single-task, single-appliance setting, BookWorm averages 80% task success across the Honeywell thermostat and Mr. Coffee maker, far outperforming prior work&mdash;Code-as-Policies (35%) and Promptbook (10%).</p>
+            <p>In the single-task, single-appliance setting, BookWorm averages 80% task success across the Honeywell thermostat, Mr. Coffee maker, and Amazon Basics waffle maker, far outperforming prior work&mdash;Code-as-Policies (23%) and Promptbook (7%).</p>
           </div>
           <h4 class="title is-5 has-text-centered">Ablations of Our Method</h4>
           <div class="columns is-centered has-text-centered ablation-cards">
             <div class="column">
               <div class="box">
                 <p class="is-size-5 has-text-weight-semibold mb-2">Remove guidebook</p>
-                <p class="title is-4 mb-2">80% <span class="has-text-grey-light">&rarr;</span> 10%</p>
-                <span class="tag is-danger is-medium">&minus;70 pts</span>
+                <p class="title is-4 mb-2">80% <span class="has-text-grey-light">&rarr;</span> 7%</p>
+                <span class="tag is-danger is-medium">&minus;73 pts</span>
               </div>
             </div>
             <div class="column">
               <div class="box">
                 <p class="is-size-5 has-text-weight-semibold mb-2">Remove human feedback</p>
-                <p class="title is-4 mb-2">80% <span class="has-text-grey-light">&rarr;</span> 35%</p>
-                <span class="tag is-danger is-medium">&minus;45 pts</span>
+                <p class="title is-4 mb-2">80% <span class="has-text-grey-light">&rarr;</span> 23%</p>
+                <span class="tag is-danger is-medium">&minus;57 pts</span>
               </div>
             </div>
             <div class="column">
               <div class="box">
                 <p class="is-size-5 has-text-weight-semibold mb-2">Remove next-state prediction</p>
-                <p class="title is-4 mb-2">80% <span class="has-text-grey-light">&rarr;</span> 40%</p>
-                <span class="tag is-danger is-medium">&minus;40 pts</span>
+                <p class="title is-4 mb-2">80% <span class="has-text-grey-light">&rarr;</span> 50%</p>
+                <span class="tag is-danger is-medium">&minus;30 pts</span>
               </div>
             </div>
           </div>
@@ -185,7 +186,13 @@
             <span>&rarr;</span><img src="static/images/appliances/black_decker_lr_cropped.jpg" alt="Black-and-Decker coffee maker" class="appliance-thumb">
             <span class="is-size-5" style="flex: 1; text-align: left;">&hellip;and then adapts to the morphologically distinct Black-and-Decker maker.</span>
           </p>
-          <div class="results-plot results-plot--right" role="img" aria-label="Transfer learning experiment results"></div>
+          <p class="is-size-3" style="display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; gap: 0.5em;">
+            <span class="is-size-5" style="flex: 1; text-align: right;">Likewise, it first learns on the Amazon Basics waffle maker&hellip;</span>
+            <img src="static/images/appliances/amazon_basics_waffle_cropped.jpg" alt="Amazon Basics waffle maker" class="appliance-thumb">
+            <span>&rarr;</span><img src="static/images/appliances/chefman_waffle_cropped.jpg" alt="Chefman rotating waffle maker" class="appliance-thumb">
+            <span class="is-size-5" style="flex: 1; text-align: left;">&hellip;and then adapts to the Chefman rotating waffle maker.</span>
+          </p>
+          <img src="static/images/transfer_results.svg" alt="Transfer experiment results" class="results-plot results-plot--right">
           <div class="content has-text-justified is-size-5">
             <p>BookWorm transfers far more efficiently than every baseline: it scores 45 percentage points higher than the Experience Replay baseline given the same amount of human supervision.</p>
           </div>
